@@ -1,0 +1,3 @@
+ZSH_AUTOSUGGEST_USE_ASYNC="true"
+
+
