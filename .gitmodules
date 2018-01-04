@@ -1,0 +1,12 @@
+[submodule "custom/plugins/alias-tips"]
+	path = custom/plugins/alias-tips
+	url = https://github.com/djui/alias-tips.git
+[submodule "custom/plugins/enhancd"]
+	path = custom/plugins/enhancd
+	url = https://github.com/b4b4r07/enhancd
+[submodule "custom/plugins/zsh-autosuggestions"]
+	path = custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "custom/themes/pure"]
+	path = custom/themes/pure
+	url = https://github.com/sindresorhus/pure
