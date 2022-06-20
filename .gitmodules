@@ -7,6 +7,6 @@
 [submodule "custom/plugins/zsh-autosuggestions"]
 	path = custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "custom/themes/pure"]
-	path = custom/themes/pure
-	url = https://github.com/sindresorhus/pure
+[submodule "custom/themes/spaceship"]
+	path = custom/themes/spaceship
+	url = https://github.com/spaceship-prompt/spaceship-prompt.git
