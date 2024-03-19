@@ -30,6 +30,11 @@ EOF
     local file="$1" full_path="${1:A}"
     local extract_dir="${1:t:r}"
 
+    # Remove the .tar extension if the file name is .tar.*
+    if [[ $extract_dir =~ '\.tar$' ]]; then
+      extract_dir="${extract_dir:r}"
+    fi
+
     # If there's a file or directory with the same name as the archive
     # add a random string to the end of the extract directory
     if [[ -e "$extract_dir" ]]; then
@@ -65,7 +70,7 @@ EOF
       (*.tar.lz4) lz4 -c -d "$full_path" | tar xvf - ;;
       (*.tar.lrz) (( $+commands[lrzuntar] )) && lrzuntar "$full_path" ;;
       (*.gz) (( $+commands[pigz] )) && pigz -cdk "$full_path" > "${file:t:r}" || gunzip -ck "$full_path" > "${file:t:r}" ;;
-      (*.bz2) bunzip2 "$full_path" ;;
+      (*.bz2) (( $+commands[pbzip2] )) && pbzip2 -d "$full_path" || bunzip2 "$full_path" ;;
       (*.xz) unxz "$full_path" ;;
       (*.lrz) (( $+commands[lrunzip] )) && lrunzip "$full_path" ;;
       (*.lz4) lz4 -d "$full_path" ;;
